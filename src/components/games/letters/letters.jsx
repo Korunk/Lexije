@@ -1,57 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Sketch from 'react-p5'
-import hriste from 'img/hriste.png'
-import letterA from 'img/A.png'
-import letterU from 'img/U.png'
-import letterT from 'img/T.png'
-import letterO from 'img/O.png'
+import levels from './levels.json'
+import images from './images'
 import './letters.css'
+
+const DEFAULT_SETTINGS = {
+  lettersClicked: 0,
+  mistakes: 0,
+  starCount: 5,
+  gameReady: false,
+  imageCount: 0,
+  levelNumber: 0
+}
 
 // create some variables to store our images
 let bgImage
-
-// create an empty string to record clicked letters
-let lettersClicked = ''
-
-let letterSequence = 0
-let mistakes = 0
-
-// simple way to turn the outline on/off
-const debugMode = true
-
-// object with the data we need for each letter
-const letter = [
-  {
-    img: null,
-    x: 145,
-    y: 160,
-    radius: 20,
-    character: 'A'
-  },
-  {
-    img: null,
-    x: 300,
-    y: 370,
-    radius: 20,
-    character: 'U'
-  },
-  {
-    img: null,
-    x: 120,
-    y: 270,
-    radius: 20,
-    character: 'T'
-  },
-  {
-    img: null,
-    x: 100,
-    y: 100,
-    radius: 20,
-    character: 'O'
-  }
-]
+let star
+const letters = {}
 
 export const Letters = () => {
+  const [settings, setSettings] = useState(DEFAULT_SETTINGS)
+
   const setup = (p5, canvasParentRef) => {
     // this creates a canvas of a certain size
     p5.createCanvas(400, 400).parent(canvasParentRef)
@@ -62,35 +31,27 @@ export const Letters = () => {
       // draw the letter at the position
       p5.imageMode(p5.CENTER)
 
-      for (let i = 0; i < letter.length; i++) {
-        p5.image(
-          letter[i].img,
-          letter[i].x,
-          letter[i].y,
-          letter[i].radius * 2,
-          letter[i].radius * 2
-        )
-      }
+      for (let i = 0; i < levels[settings.levelNumber].letters.length; i++) {
+        const letter = levels[settings.levelNumber].letters[i]
 
-      // image(
-      //  letter[0].img,
-      //  letter[0].x,
-      //  letter[0].y,
-      //  letter[0].radius * 2,
-      //  letter[0].radius * 2,
-      // );
-      // if debug mode is on, draw the outline around the letter
-      if (debugMode === true) {
-        p5.noFill()
-        p5.stroke(255, 0, 0)
-        for (let i = 0; i < letter.length; i++) {
-          p5.ellipse(letter[i].x, letter[i].y, letter[i].radius * 2, letter[i].radius * 2)
-        }
+        p5.image(
+          letters[letter.character],
+          letter.x,
+          letter.y,
+          letter.radius * 2,
+          letter.radius * 2
+        )
       }
     }
 
-    // draw the background image
+    p5.background(0)
     p5.imageMode(p5.CORNER)
+    let x = 200
+    for (let i = 0; i < settings.starCount; i++) {
+      p5.image(star, x, 5, 20, 20)
+      x = x + 30
+    }
+
     p5.image(bgImage, 0, 40)
 
     // call our function that draws the letter
@@ -102,39 +63,50 @@ export const Letters = () => {
     p5.fill(255, 0, 0)
 
     // display clicked letters
-    p5.text(lettersClicked, 20, 20)
+    p5.text(settings.lettersClicked, 20, 20)
   }
 
   const preload = (p5) => {
-    bgImage = p5.loadImage(hriste)
+    loadLevel(0, p5)
+    star = p5.loadImage(images.star)
+  }
 
-    letter[0].img = p5.loadImage(letterA)
-    letter[1].img = p5.loadImage(letterU)
-    letter[2].img = p5.loadImage(letterT)
-    letter[3].img = p5.loadImage(letterO)
+  const loadLevel = (level, p5) => {
+    setSettings({ ...DEFAULT_SETTINGS, ...{ levelNumber: level } })
+    bgImage = p5.loadImage(images.hriste)
+
+    for (let i = 0; i < levels[level].letters.length; i++) {
+      const character = levels[level].letters[i].character
+      if (character && images[character]) {
+        letters[character] = p5.loadImage(images[character])
+      }
+    }
   }
 
   // runs when the mouse is clicked
   const mousePressed = (p5) => {
   // calculate distance from mouse to center of letter
-    const distanceToMouse = p5.floor(p5.dist(p5.mouseX, p5.mouseY, letter[letterSequence].x, letter[letterSequence].y))
+    const targetLetter = levels[settings.levelNumber].letters[settings.lettersClicked]
+
+    const distanceToMouse = p5.floor(
+      p5.dist(p5.mouseX, p5.mouseY, targetLetter.x, targetLetter.y)
+    )
 
     // if distance bigger than radius, player missed
-    if (distanceToMouse > letter[letterSequence].radius) {
+    if (distanceToMouse > targetLetter.radius) {
       console.log('miss')
-      mistakes++
-      console.log('pocet chyb' + mistakes)
+      setSettings({ settings, ...{ mistakes: settings.mistakes + 1, starCount: settings.starCount - 1 } })
+      console.log('pocet chyb' + settings.mistakes)
     } else {
       console.log('hit')
-      lettersClicked += letter[letterSequence].character
-      letterSequence++
+      setSettings({ settings, ...{ lettersClicked: settings.lettersClicked + 1 } })
     }
   }
 
   return (
     <>
       <p>Hra slova</p>
-       <Sketch setup={setup} draw={draw} preload={preload} mousePressed={mousePressed} />;
+      <Sketch setup={setup} draw={draw} preload={preload} mousePressed={mousePressed} />
     </>
   )
 }
