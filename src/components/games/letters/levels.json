@@ -1,5 +1,6 @@
 [
     {
+				"word": "AUTO",
         "background": "hriste",
         "letters": [
             {
@@ -33,6 +34,7 @@
         ]
     },
     {
+				"word": "TEST",
         "background": "vesmir",
         "letters": [
             {

@@ -51,6 +51,7 @@ export const Letters = () => {
   const setup = (p5, canvasParentRef) => {
     // this creates a canvas of a certain size
     p5.createCanvas(400, 440).parent(canvasParentRef)
+    p5.textFont('Patrick Hand')
   }
 
   const draw = (p5) => {
@@ -65,6 +66,7 @@ export const Letters = () => {
     drawStars(p5)
     drawLetters(p5)
     drawLettersClicked(p5)
+    drawTargetWord(p5)
 
     if (isLevelFinished()) {
       loadLevel(settings.levelNumber + 1)
@@ -84,12 +86,12 @@ export const Letters = () => {
 
   const drawStars = (p5) => {
     const { starCount } = settings
-    let starX = 200
+    let starX = 380
     const starY = 5
 
     for (let i = 0; i < starCount; i++) {
       p5.image(star, starX, starY, 20, 20)
-      starX = starX + 30
+      starX = starX - 30
     }
   }
 
@@ -114,14 +116,27 @@ export const Letters = () => {
     }
   }
 
-  const drawLettersClicked = (p5) => {
+  const drawTargetWord = (p5) => {
+    const { levelNumber } = settings
+    const { word } = levels[levelNumber]
+
     // set some properties for the text we will write on the canvas
     p5.textSize(20)
     p5.noStroke()
     p5.fill(255, 0, 0)
 
+    // display target letter
+    p5.text(`${word}`, 20, 20)
+  }
+
+  const drawLettersClicked = (p5) => {
+    // set some properties for the text we will write on the canvas
+    p5.textSize(30)
+    p5.noStroke()
+    p5.fill(0, 0, 255)
+
     // display clicked letters
-    p5.text(settings.lettersClicked, 20, 20)
+    p5.text(settings.lettersClicked, 150, 30)
   }
 
   // runs when the mouse is clicked

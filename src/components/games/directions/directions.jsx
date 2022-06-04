@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import './directions.css'
 import Sketch from 'react-p5'
+import { Header } from 'components/header/header'
+import './directions.css'
 import i1 from '../../../img/PL_1_A.png'
 import i2 from '../../../img/PL_1_B.png'
-import { Header } from 'components/header/header'
 // import fruit from '../../../img/pomeranc.png'
 
 export const Directions = () => {
@@ -14,9 +14,12 @@ export const Directions = () => {
 
   const setup = (p5, canvasParentRef) => {
     p5.createCanvas(400, 400).parent(canvasParentRef)
+
     const randomNumber = p5.random(0, 1)
+
     setTarget(randomNumber < 0.5 ? 'left' : 'right')
-    console.log(target)
+
+    console.log({ target })
   }
   const draw = (p5) => {
     p5.background(190, 100, 0)
