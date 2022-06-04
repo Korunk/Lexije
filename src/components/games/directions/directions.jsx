@@ -3,6 +3,7 @@ import './directions.css'
 import Sketch from 'react-p5'
 import i1 from '../../../img/PL_1_A.png'
 import i2 from '../../../img/PL_1_B.png'
+import { Header } from 'components/header/header'
 // import fruit from '../../../img/pomeranc.png'
 
 export const Directions = () => {
@@ -62,6 +63,7 @@ export const Directions = () => {
 
   console.log(` tvoje score je ${score}`)
   return <>
+  <Header withElephant={true}/>
           <p>Pravá - Levá</p>
         <Sketch setup={setup} draw={draw} preload={preload} mousePressed={mousePressed} />
     </>
