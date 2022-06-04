@@ -73,7 +73,8 @@ export const Letters = () => {
 
   const loadLevel = (level, p5) => {
     setSettings({ ...DEFAULT_SETTINGS, ...{ levelNumber: level } })
-    bgImage = p5.loadImage(images.hriste)
+
+    bgImage = p5.loadImage(images[levels[level].background])
 
     for (let i = 0; i < levels[level].letters.length; i++) {
       const character = levels[level].letters[i].character
@@ -99,7 +100,16 @@ export const Letters = () => {
       console.log('pocet chyb' + settings.mistakes)
     } else {
       console.log('hit')
-      setSettings({ ...settings, ...{ lettersClicked: settings.lettersClicked + 1 } })
+      const lettersClicked = settings.lettersClicked + 1
+      setSettings({ ...settings, ...{ lettersClicked } })
+
+      if (lettersClicked === levels[settings.levelNumber].letters.length) {
+        console.log(
+          'jsi na konci a ted tu chci vymazat vsechny promenne a naplnit je necim novym'
+        )
+
+        loadLevel(settings.levelNumber + 1)
+      }
     }
   }
 

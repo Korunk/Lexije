@@ -1,6 +1,6 @@
 [
     {
-        "background": "hriste.png",
+        "background": "hriste",
         "letters": [
             {
                 "img": "A.png",
@@ -33,7 +33,7 @@
         ]
     },
     {
-        "background": "vesmir.png",
+        "background": "vesmir",
         "letters": [
             {
                 "img": "T.png",
