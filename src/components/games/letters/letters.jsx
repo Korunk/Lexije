@@ -6,6 +6,7 @@ import letterU from 'img/U.png'
 import letterT from 'img/T.png'
 import letterO from 'img/O.png'
 import './letters.css'
+import { Header } from 'components/header/header'
 
 // create some variables to store our images
 let bgImage
@@ -133,6 +134,7 @@ export const Letters = () => {
 
   return (
     <>
+    <Header withElephant={true}/>
       <p>Hra slova</p>
        <Sketch setup={setup} draw={draw} preload={preload} mousePressed={mousePressed} />;
     </>

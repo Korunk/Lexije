@@ -1,3 +1,19 @@
 .slon--img {
   width: 200px;
 }
+.ukazatel-uspechu {
+	max-width: 200px;
+	text-align: center;
+}
+
+.ukazatel-uspechu__ramecek {
+	border: 1px solid gray;
+	margin: 15px 0 5px;
+}
+
+.ukazatel-uspechu__postup {
+	position: relative;
+	overflow: hidden;
+	height: 15px;
+	transition: width 0.2s ease-out;
+}

@@ -5,7 +5,7 @@ import { Header } from '../header/header'
 export const Info = () => {
   return (
     <>
-    <Header/>
+    <Header withElephant={false}/>
       <h1>Základní informace o Dyslexii</h1>
  <p>Dyslexie je specifická porucha čtení. Přináší nejen dětem, ale i dospělým obtíže při čtení, které jim komplikují získávání vědomostí pomocí čtení. A protože na čtení je z velké míry postavena výuka i příprava na vyučování, omezuje schopnost učení se a ohrožuje školní úspěšnost dítěte.</p>
  <h2>Příčiny vzniku dyslexie</h2>

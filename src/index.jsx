@@ -24,7 +24,7 @@ const App = () => (
     </div>
     <div className="content">
       <h1>LeXije</h1>
-      <img className="slon--img" src={slon} alt="slon" />
+      <Link to="/score"><img className="slon--img" src={slon} alt="slon" /></Link>
       <div className="menu">
         <Link to="/letters" className="menu--item">
           Hra slova
