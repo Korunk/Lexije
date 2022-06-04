@@ -2,15 +2,15 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 import './style.css'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
-import { Info } from './components/info/info'
-import { Score } from './components/score/score'
-import { Settings } from './components/settings/settings'
-import { Clock } from './components/games/clock/clock'
-import { Letters } from './components/games/letters/letters'
-import { Directions } from './components/games/directions/directions'
-import otaznik from './img/otaznik.png'
-import casovac from './img/lock.png'
-import slon from './img/rocket.png'
+import { Info } from 'components/info/info'
+import { Score } from 'components/score/score'
+import { Settings } from 'components/settings/settings'
+import { Clock } from 'components/games/clock/clock'
+import { Letters } from 'components/games/letters/letters'
+import { Directions } from 'components/games/directions/directions'
+import otaznik from 'img/otaznik.png'
+import casovac from 'img/lock.png'
+import slon from 'img/rocket.png'
 
 const App = () => (
   <>
@@ -40,16 +40,19 @@ const App = () => (
   </>
 )
 
-createRoot(document.querySelector('#app')).render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/score" element={<Score />} />
-      <Route path="/settings" element={<Settings />} />
-      <Route path="/info" element={<Info />} />
-      <Route path="/letters" element={<Letters />} />
-      <Route path="/clock" element={<Clock />} />
-      <Route path="/directions" element={<Directions />} />
-    </Routes>
-  </BrowserRouter>
+createRoot(document.getElementById('app')).render(
+  <div className="appWrapper">
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/score" element={<Score />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/info" element={<Info />} />
+        <Route path="/letters" element={<Letters />} />
+        <Route path="/clock" element={<Clock />} />
+        <Route path="/directions" element={<Directions />} />
+        <Route path="*" element={<main style={{ padding: '1rem' }}><p>Stránka nenalezena</p></main>} />
+      </Routes>
+    </BrowserRouter>
+  </div>
 )
