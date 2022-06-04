@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+#app {
+  width: 100%;
+}
 body {
   background-color: #fae2e2;
   display: flex;
@@ -16,12 +19,14 @@ body {
   border-radius: 10px;
   font-size: 22px;
   line-height: 3;
-  align-items: center;
-  display: block;
   width: 15em;
 }
 .menu {
   padding-top: 30px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 a:link {
   text-decoration: none;
@@ -41,11 +46,4 @@ h1 {
   justify-content: space-between;
   align-items: baseline;
 }
-.main {
-  align-items: center;
-}
-@media (min-width: 420px) {
-  #app {
-    width: 800px;
-  }
-}
+
