@@ -40,7 +40,7 @@ const App = () => (
   </>
 )
 
-createRoot(document.querySelector('#app')).render(
+createRoot(document.getElementById('app')).render(
   <div className="appWrapper">
     <BrowserRouter>
       <Routes>
@@ -51,6 +51,7 @@ createRoot(document.querySelector('#app')).render(
         <Route path="/letters" element={<Letters />} />
         <Route path="/clock" element={<Clock />} />
         <Route path="/directions" element={<Directions />} />
+        <Route path="*" element={<main style={{ padding: '1rem' }}><p>Stránka nenalezena</p></main>} />
       </Routes>
     </BrowserRouter>
   </div>
