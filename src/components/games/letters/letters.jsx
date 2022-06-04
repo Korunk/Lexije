@@ -3,6 +3,7 @@ import Sketch from 'react-p5'
 import levels from './levels.json'
 import images from './images'
 import './letters.css'
+import { Header } from 'components/header/header'
 
 const DEFAULT_SETTINGS = {
   levelNumber: 0,
@@ -159,6 +160,7 @@ export const Letters = () => {
 
   return (
     <>
+    <Header withElephant={true}/>
       <p>Hra slova</p>
       <Sketch setup={setup} draw={draw} preload={preload} mousePressed={mousePressed} />
     </>
