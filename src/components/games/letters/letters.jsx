@@ -1,10 +1,10 @@
 import React from 'react'
 import Sketch from 'react-p5'
-import hriste from '../../../img/hriste.png'
-import letterA from '../../../img/A.png'
-import letterU from '../../../img/U.png'
-import letterT from '../../../img/T.png'
-import letterO from '../../../img/O.png'
+import hriste from 'img/hriste.png'
+import letterA from 'img/A.png'
+import letterU from 'img/U.png'
+import letterT from 'img/T.png'
+import letterO from 'img/O.png'
 import './letters.css'
 
 // create some variables to store our images
