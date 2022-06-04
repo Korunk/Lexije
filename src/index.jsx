@@ -14,23 +14,29 @@ import slon from './img/rocket.png';
 
 const App = () => (
   <>
-    <Link to="/info" className="info">
-      <img src={otaznik}></img>
-    </Link>
-    <Link to="/settings" className="settings">
-      <img src={casovac}></img>
-    </Link>
-    <h1>LeXije</h1>
-    <img className="" src={slon} alt="slon" />
-    <Link to="/letters" className="">
-      Hra slova
-    </Link>
-    <Link to="/clock" className="">
-      Hra hodiny
-    </Link>
-    <Link to="/directions" className="">
-      Hra strany
-    </Link>
+    <div className="header">
+      <Link to="/info">
+        <img className="header--img" src={otaznik}></img>
+      </Link>
+      <Link to="/settings">
+        <img className="header--img" src={casovac}></img>
+      </Link>
+    </div>
+    <div className="content">
+      <h1>LeXije</h1>
+      <img className="slon--img" src={slon} alt="slon" />
+      <div className="menu">
+        <Link to="/letters" className="menu--item">
+          Hra slova
+        </Link>
+        <Link to="/clock" className="menu--item">
+          Hra hodiny
+        </Link>
+        <Link to="/directions" className="menu--item">
+          Hra strany
+        </Link>
+      </div>
+    </div>
   </>
 );
 
