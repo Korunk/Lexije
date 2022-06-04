@@ -95,11 +95,11 @@ export const Letters = () => {
     // if distance bigger than radius, player missed
     if (distanceToMouse > targetLetter.radius) {
       console.log('miss')
-      setSettings({ settings, ...{ mistakes: settings.mistakes + 1, starCount: settings.starCount - 1 } })
+      setSettings({ ...settings, ...{ mistakes: settings.mistakes + 1, starCount: settings.starCount - 1 } })
       console.log('pocet chyb' + settings.mistakes)
     } else {
       console.log('hit')
-      setSettings({ settings, ...{ lettersClicked: settings.lettersClicked + 1 } })
+      setSettings({ ...settings, ...{ lettersClicked: settings.lettersClicked + 1 } })
     }
   }
 
