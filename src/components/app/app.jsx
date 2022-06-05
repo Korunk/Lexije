@@ -13,7 +13,7 @@ const DEFAULT_APP_STATUS = {
   hunger: 0,
   weariness: 0,
   fruits: [],
-  timer: 601,
+  timer: 600,
   appStarted: Date.now()
 }
 
