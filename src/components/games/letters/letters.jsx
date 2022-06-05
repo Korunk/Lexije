@@ -9,11 +9,15 @@ const DEFAULT_SETTINGS = {
   levelNumber: 0,
   letterIndex: 0,
   lettersClicked: '',
-  starCount: 5
+  starCount: 5,
+  debugMode: true,
+  gameState: 'PLAYING',
+  transitionDuration: 120,
+  transitionCountdown: 60
 }
 
 // create some variables to store our images
-let star
+let star, sadElephant, fruit
 const letterImages = {}
 const bgImages = {}
 
@@ -22,8 +26,10 @@ export const Letters = () => {
 
   const preload = (p5) => {
     star = p5.loadImage(images.star)
+    fruit = p5.loadImage(images.fruit)
+    sadElephant = p5.loadImage(images.sadElephant)
+
     loadAllImages(p5)
-    loadLevel(settings.levelNumber)
   }
 
   const loadAllImages = (p5) => {
@@ -45,7 +51,11 @@ export const Letters = () => {
 
   const loadLevel = (levelNumber) => {
     console.log(`loading level ${levelNumber}`)
-    setSettings({ ...DEFAULT_SETTINGS, ...{ levelNumber } })
+
+    setSettings({
+      ...DEFAULT_SETTINGS,
+      ...{ levelNumber }
+    })
   }
 
   const setup = (p5, canvasParentRef) => {
@@ -55,29 +65,74 @@ export const Letters = () => {
   }
 
   const draw = (p5) => {
-    const { levelNumber } = settings
+    const { gameState } = settings
 
-    p5.background('#fae2e2')
+    p5.background('#fae2e220')
 
     // set p5 to draw images using (x,y) as corner
     p5.imageMode(p5.CORNER)
-    p5.image(bgImages[levelNumber], 0, 40)
 
     drawStars(p5)
-    drawLetters(p5)
     drawLettersClicked(p5)
     drawTargetWord(p5)
 
+    switch (gameState) {
+      case 'PLAYING':
+        drawPlayScreen(p5)
+        break
+      case 'TRANSITION':
+        drawTransitionScreen(p5)
+        break
+    }
+  }
+
+  const drawPlayScreen = (p5) => {
+    const { levelNumber, transitionDuration } = settings
+
+    p5.image(bgImages[levelNumber], 0, 40)
+
+    drawLetters(p5)
+
     if (isLevelFinished()) {
-      loadLevel(settings.levelNumber + 1)
+      setSettings({
+        ...settings,
+        ...{ transitionCountdown: transitionDuration },
+        ...{ gameState: 'TRANSITION' }
+      })
+    }
+  }
+
+  const drawTransitionScreen = (p5) => {
+    const { transitionCountdown, levelNumber, starCount } = settings
+
+    if (transitionCountdown > 0) {
+      setSettings({
+        ...settings,
+        ...{ transitionCountdown: transitionCountdown - 1 }
+      })
+
+      if (starCount > 0) {
+        p5.image(fruit, 0, 40, 400, 400)
+      } else {
+        p5.image(sadElephant, 0, 40, 400, 400)
+      }
+    } else {
+      if (starCount > 0) {
+        loadLevel(levelNumber + 1)
+      } else {
+        loadLevel(levelNumber)
+      }
     }
   }
 
   const isLevelFinished = () => {
-    const { levelNumber, letterIndex } = settings
+    const { levelNumber, letterIndex, starCount } = settings
     const { letters } = levels[levelNumber]
 
-    if (letterIndex === letters.length) {
+    const playerClickedAllLetters = (letterIndex === letters.length)
+    const playerLostAllStars = (starCount === 0)
+
+    if (playerClickedAllLetters || playerLostAllStars) {
       return true
     } else {
       return false
@@ -99,7 +154,7 @@ export const Letters = () => {
     // set p5 to draw images using (x,y) as center
     p5.imageMode(p5.CENTER)
 
-    const { levelNumber } = settings
+    const { levelNumber, debugMode } = settings
     const level = levels[levelNumber]
 
     for (let i = 0; i < level.letters.length; i++) {
@@ -113,6 +168,17 @@ export const Letters = () => {
         letter.radius * 2,
         letter.radius * 2
       )
+
+      if (debugMode === true) {
+        p5.stroke(0, 255, 0)
+        p5.fill(255, 0, 255, 128)
+        p5.ellipse(
+          letter.x,
+          letter.y,
+          letter.radius * 2,
+          letter.radius * 2
+        )
+      }
     }
   }
 
@@ -141,7 +207,12 @@ export const Letters = () => {
 
   // runs when the mouse is clicked
   const mousePressed = (p5) => {
-    const { levelNumber, letterIndex } = settings
+    const { levelNumber, letterIndex, gameState } = settings
+
+    if (gameState !== 'PLAYING') {
+      return
+    }
+
     const { letters } = levels[levelNumber]
     const targetLetter = letters[letterIndex]
 
@@ -160,7 +231,11 @@ export const Letters = () => {
   }
 
   const decreaseStars = () => {
-    setSettings({ ...settings, ...{ starCount: settings.starCount - 1 } })
+    setSettings({
+      ...settings,
+      ...{ starCount: settings.starCount - 1 }
+    })
+
     console.log(`pocet chyb ${settings.starCount - 5}`)
   }
 
@@ -170,7 +245,12 @@ export const Letters = () => {
     const targetLetter = letters[letterIndex]
 
     const lettersClicked = settings.lettersClicked + targetLetter.character
-    setSettings({ ...settings, ...{ lettersClicked }, ...{ letterIndex: letterIndex + 1 } })
+
+    setSettings({
+      ...settings,
+      ...{ lettersClicked },
+      ...{ letterIndex: letterIndex + 1 }
+    })
   }
 
   return (
