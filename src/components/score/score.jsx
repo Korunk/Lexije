@@ -6,11 +6,15 @@ import slon from 'img/rocket.png'
 export const Score = () => {
   const { score, setScore } = useContext(ScoreContext)
 
-  return (<><Header/>
-  <p>Hlad:</p>
-  <p>Únava:</p>
-  <p>{score.fruits}</p>
-  <img className='slon--img' src={slon}></img></>)
+  return (
+    <>
+      <Header />
+      <p>Hlad:</p>
+      <p>Únava:</p>
+      <p>{score.fruits}</p>
+      <img className='slon--img' src={slon}></img>
+    </>
+  )
 }
 
 export const ScoreContext = createContext({
@@ -19,5 +23,5 @@ export const ScoreContext = createContext({
     weariness: 0,
     fruits: []
   },
-  setScore: () => {}
+  setScore: () => { }
 })

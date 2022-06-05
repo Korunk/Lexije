@@ -14,31 +14,31 @@ import slon from 'img/rocket.png'
 
 const Menu = () => {
   return (
-  <>
-    <div className="header">
-      <Link to="/info">
-        <img className="header--img" src={otaznik}></img>
-      </Link>
-      <Link to="/settings">
-        <img className="header--img" src={casovac}></img>
-      </Link>
-    </div>
-    <div className="content">
-      <h1>LeXije</h1>
-      <Link to="/score"><img className="slon--img" src={slon} alt="slon" /></Link>
-      <div className="menu">
-        <Link to="/letters" className="menu--item">
-          Hra slova
+    <>
+      <div className="header">
+        <Link to="/info">
+          <img className="header--img" src={otaznik}></img>
         </Link>
-        <Link to="/clock" className="menu--item">
-          Hra hodiny
-        </Link>
-        <Link to="/directions" className="menu--item">
-          Hra strany
+        <Link to="/settings">
+          <img className="header--img" src={casovac}></img>
         </Link>
       </div>
-    </div>
-  </>
+      <div className="content">
+        <h1>LeXije</h1>
+        <Link to="/score"><img className="slon--img" src={slon} alt="slon" /></Link>
+        <div className="menu">
+          <Link to="/letters" className="menu--item">
+            Hra slova
+          </Link>
+          <Link to="/clock" className="menu--item">
+            Hra hodiny
+          </Link>
+          <Link to="/directions" className="menu--item">
+            Hra strany
+          </Link>
+        </div>
+      </div>
+    </>
   )
 }
 
@@ -52,21 +52,21 @@ const App = () => {
 
   return (
     <div className="appWrapper">
-    <ScoreContext.Provider value={ value }>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Menu />} />
-          <Route path="/score" element={<Score />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/info" element={<Info />} />
-          <Route path="/letters" element={<Letters />} />
-          <Route path="/clock" element={<Clock />} />
-          <Route path="/directions" element={<Directions />} />
-          <Route path="*" element={<main style={{ padding: '1rem' }}><p>Stránka nenalezena</p></main>} />
-        </Routes>
-      </BrowserRouter>
-    </ScoreContext.Provider>
-  </div>
+      <ScoreContext.Provider value={value}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Menu />} />
+            <Route path="/score" element={<Score />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/info" element={<Info />} />
+            <Route path="/letters" element={<Letters />} />
+            <Route path="/clock" element={<Clock />} />
+            <Route path="/directions" element={<Directions />} />
+            <Route path="*" element={<main style={{ padding: '1rem' }}><p>Stránka nenalezena</p></main>} />
+          </Routes>
+        </BrowserRouter>
+      </ScoreContext.Provider>
+    </div>
   )
 }
 
