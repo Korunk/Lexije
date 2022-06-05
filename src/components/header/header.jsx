@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 import slon from 'img/rocket.png'
 
 export const Header = (props = { withElephant: true }) => {
-  console.log(props)
   return (
     <>
       <Link to="/">

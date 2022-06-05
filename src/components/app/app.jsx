@@ -9,13 +9,16 @@ import { Letters } from 'components/games/letters/letters'
 import { Directions } from 'components/games/directions/directions'
 import { Menu } from 'components/menu/menu'
 
+const DEFAULT_APP_STATUS = {
+  hunger: 50,
+  weariness: 0,
+  fruits: ['banana', 'cherry', 'pear'],
+  timer: 601,
+  appStarted: Date.now()
+}
+
 export const App = () => {
-  const [status, setStatus] = useState({
-    hunger: 0,
-    weariness: 0,
-    fruits: [],
-    timer: 600
-  })
+  const [status, setStatus] = useState(DEFAULT_APP_STATUS)
   const value = { status, setStatus }
 
   return (
@@ -39,11 +42,6 @@ export const App = () => {
 }
 
 export const AppContext = createContext({
-  status: {
-    hunger: 0,
-    weariness: 0,
-    fruits: [],
-    timer: 600
-  },
+  status: DEFAULT_APP_STATUS,
   setStatus: () => { }
 })
