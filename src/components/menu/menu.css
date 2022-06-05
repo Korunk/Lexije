@@ -1,0 +1,49 @@
+
+.menu--item {
+  background-color: #f4b7b7;
+  margin: 10px;
+  color: black;
+  border-radius: 10px;
+  font-size: 22px;
+  line-height: 3;
+  width: 15em;
+ 
+ 
+}
+.menu {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+.slon--img {
+  width: 200px;
+}
+h1 {
+  font-size: 500%;
+}
+
+.header--img {
+  width: 25px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
