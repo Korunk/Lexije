@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+#app {
+  width: 100%;
+}
+body {
+  background-color: #fae2e2;
+  display: flex;
+ text-align: center;
+  font-family: 'Patrick Hand', cursive;
+}
