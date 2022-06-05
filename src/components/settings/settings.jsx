@@ -12,13 +12,22 @@ export const Settings = () => {
 
   const [seconds, setSeconds] = useState(allSeconds[1])
   const [secondsDecimal, setSecondsDecimal] = useState(allSeconds[0])
+
   const [minutes, setMinutes] = useState(allMinutes[1])
   const [minutesDecimal, setMinutesDecimal] = useState(allMinutes[0])
 
   useEffect(() => {
-    setStatus({ ...status, ...{ timer: (Number(minutesDecimal) * 600) + (Number(minutes) * 60) + (Number(secondsDecimal) * 10) + Number(seconds) } })
-  },
-  [seconds, secondsDecimal, minutes, minutesDecimal]
+    setStatus({
+      ...status,
+      ...{
+        timer:
+        (Number(minutesDecimal) * 600) +
+        (Number(minutes) * 60) +
+        (Number(secondsDecimal) * 10) +
+        Number(seconds)
+      }
+    })
+  }, [seconds, secondsDecimal, minutes, minutesDecimal]
   )
 
   return (
@@ -27,13 +36,37 @@ export const Settings = () => {
       <p>Nastav čas, jak dlouho může mít dítě zapnutou aplikaci.</p>
       <TimePlaying/>
 
-      <input onKeyPress={(event) => { if (/[0-6]/.test(event.key)) setMinutesDecimal(event.key) }} value={minutesDecimal} maxLength="1" />
+      <input
+        maxLength="1"
+        value={minutesDecimal}
+        onKeyPress={(event) => {
+          if (/[0-6]/.test(event.key)) setMinutesDecimal(event.key)
+        }}
+      />
 
-      <input value={minutes} maxLength="1" onKeyPress={(event) => { if (/[0-9]/.test(event.key)) setMinutes(event.key) }} />
+      <input
+        maxLength="1"
+        value={minutes}
+        onKeyPress={(event) => {
+          if (/[0-9]/.test(event.key)) setMinutes(event.key)
+        }}
+      />
 
-      <input value={secondsDecimal} maxLength="1" onKeyPress={(event) => { if (/[0-6]/.test(event.key)) setSecondsDecimal(event.key) }} />
+      <input
+        maxLength="1"
+        value={secondsDecimal}
+        onKeyPress={(event) => {
+          if (/[0-6]/.test(event.key)) setSecondsDecimal(event.key)
+        }}
+      />
 
-      <input value={seconds} maxLength="1" onKeyPress={(event) => { if (/[0-9]/.test(event.key)) setSeconds(event.key) }} />
+      <input
+        maxLength="1"
+        value={seconds}
+        onKeyPress={(event) => {
+          if (/[0-9]/.test(event.key)) setSeconds(event.key)
+        }}
+      />
     </>
   )
 }
