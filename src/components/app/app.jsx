@@ -10,9 +10,9 @@ import { Directions } from 'components/games/directions/directions'
 import { Menu } from 'components/menu/menu'
 
 const DEFAULT_APP_STATUS = {
-  hunger: 0,
+  hunger: 50,
   weariness: 0,
-  fruits: [],
+  fruits: ['banana', 'cherry', 'pear'],
   timer: 601,
   appStarted: Date.now()
 }

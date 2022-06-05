@@ -17,13 +17,34 @@
 	height: 15px;
 	transition: width 0.2s ease-out;
 }
+.fruits-list {
+	display:flex;
+	justify-content: center;
+    align-items: center;
+}
+.fruits-wrapper {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	min-height: 90px;
+	background-color: white;
+    border-radius: 10px;
+}
 .fruit {
 	width: 30px;
 	height: 30px;
 	background-repeat: no-repeat;
-	background-size: auto;
+	background-size: contain;
+	background-position: center;
 }
 .fruit-banana {
 	background-image: url('img/banan.png');
+}
+.fruit-cherry {
+	background-image: url('img/tresen.png');
+}
+.fruit-pear {
+	background-image: url('img/hruska.png');
 }
 
