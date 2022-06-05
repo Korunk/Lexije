@@ -12,8 +12,12 @@ export const Score = () => {
       <Header />
       <p>Hlad:</p>
       <p>Únava:</p>
-      <p>{status.fruits}</p>
       <img className='slon--img' src={slon}></img>
+      <div className='fruits-list'>
+        {
+          status.fruits.map((fruit, index) => <div className={`fruit fruit-${fruit}`} key={index}></div>)
+        }
+      </div>
     </>
   )
 }
