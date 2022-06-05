@@ -14,7 +14,7 @@ export const App = () => {
     hunger: 0,
     weariness: 0,
     fruits: [],
-    timer: 600
+    timer: 601
   })
   const value = { status, setStatus }
 
