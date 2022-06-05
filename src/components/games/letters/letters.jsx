@@ -65,12 +65,13 @@ export const Letters = () => {
     // this creates a canvas of a certain size
     p5.createCanvas(400, 440).parent(canvasParentRef)
     p5.textFont('Patrick Hand')
+    p5.background('#fae2e2')
   }
 
   const draw = (p5) => {
     const { gameState } = settings
 
-    p5.background('#fae2e220')
+    p5.background('#fae2e230')
 
     // set p5 to draw images using (x,y) as corner
     p5.imageMode(p5.CORNER)
@@ -239,11 +240,16 @@ export const Letters = () => {
       return
     }
 
+    const { mouseX, mouseY } = p5
+
+    // here you should check if mouseX and mouseY are inside the canvas
+    // if it is not, return and dont continue with the function
+
     const { letters } = levels[levelNumber]
     const targetLetter = letters[letterIndex]
 
     const distanceToMouse = p5.floor(
-      p5.dist(p5.mouseX, p5.mouseY, targetLetter.x, targetLetter.y)
+      p5.dist(mouseX, mouseY, targetLetter.x, targetLetter.y)
     )
 
     // if distance bigger than radius, player missed
