@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import { Header } from '../header/header'
 import './settings.css'
 import { AppContext } from 'components/app/app'
+import { TimePlaying } from 'components/timePlaying/timePlaying'
 
 export const Settings = () => {
   const { status, setStatus } = useContext(AppContext)
@@ -19,18 +20,6 @@ export const Settings = () => {
   },
   [seconds, secondsDecimal, minutes, minutesDecimal]
   )
-
-  const TimePlaying = () => {
-   const timePlaying = ((Date.now()- status.appStarted)/ 1000)
-    if (timePlaying < status.timer) {
-    let timeToEnd = (status.timer - timePlaying)
-    return (<p>Zbývá ti {timeToEnd} vteřin.</p>)
-   } 
-   else {
-     return (<p>Čas vypršel!</p>)  
-     }
-  }
-
 
   return (
     <>

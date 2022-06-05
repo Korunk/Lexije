@@ -4,6 +4,7 @@ import { Header } from 'components/header/header'
 import './directions.css'
 import images from './images'
 import levels from './levels.json'
+import { TimePlaying } from 'components/timePlaying/timePlaying'
 
 const DEFAULT_SETTINGS = {
   levelNumber: 0,
@@ -173,6 +174,7 @@ export const Directions = () => {
     <>
       <Header withElephant={true}/>
       <p>Pravá - Levá</p>
+      <TimePlaying/>
       <Sketch setup={setup} draw={draw} preload={preload} mousePressed={mousePressed} />
     </>
   )

@@ -5,6 +5,7 @@ import images from './images'
 import './letters.css'
 import { Header } from 'components/header/header'
 import { AppContext } from 'components/app/app'
+import { TimePlaying } from 'components/timePlaying/timePlaying'
 
 const DEFAULT_SETTINGS = {
   levelNumber: 0,
@@ -283,6 +284,7 @@ export const Letters = () => {
     <>
       <Header withElephant={true} />
       <p>Hra slova</p>
+      <TimePlaying/>
       <Sketch setup={setup} draw={draw} preload={preload} mouseClicked={mouseClicked} />
     </>
   )
