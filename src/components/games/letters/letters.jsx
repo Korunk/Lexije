@@ -4,7 +4,7 @@ import levels from './levels.json'
 import images from './images'
 import './letters.css'
 import { Header } from 'components/header/header'
-import { ScoreContext } from 'components/score/score'
+import { AppContext } from 'components/app/app'
 
 const DEFAULT_SETTINGS = {
   levelNumber: 0,
@@ -23,7 +23,7 @@ const letterImages = {}
 const bgImages = {}
 
 export const Letters = () => {
-  const { score, setScore } = useContext(ScoreContext)
+  const { status, setStatus } = useContext(AppContext)
   const [settings, setSettings] = useState(DEFAULT_SETTINGS)
 
   const preload = (p5) => {
@@ -115,7 +115,7 @@ export const Letters = () => {
 
       if (starCount > 0) {
         p5.image(fruit, 0, 40, 400, 400)
-        setScore({ fruits: score.fruits.concat(['banana']) })
+        setStatus({ fruits: status.fruits.concat(['banana']) })
       } else {
         p5.image(sadElephant, 0, 40, 400, 400)
       }
