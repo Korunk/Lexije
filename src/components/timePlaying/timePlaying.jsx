@@ -1,4 +1,4 @@
-import React, { useContext} from 'react'
+import React, { useContext } from 'react'
 import { AppContext } from 'components/app/app'
 
 export const TimePlaying = () => {
@@ -6,10 +6,9 @@ export const TimePlaying = () => {
   const timePlaying = ((Date.now() - status.appStarted) / 1000)
 
   if (timePlaying < status.timer) {
-    let timeToEnd = (status.timer - timePlaying)
-    return (<p>Zbývá ti {Math.floor(timeToEnd)} vteřin.</p>)
-  }
-  else {
+    const timeToEnd = (status.timer - timePlaying)
+    return (<p>Zbývá ti {Math.ceil(timeToEnd)} vteřin.</p>)
+  } else {
     return (<p>Čas vypršel!</p>)
   }
 }

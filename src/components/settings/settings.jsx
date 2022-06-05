@@ -25,14 +25,19 @@ export const Settings = () => {
         (Number(minutes) * 60) +
         (Number(secondsDecimal) * 10) +
         Number(seconds)
+      },
+      ...{
+        appStarted: Date.now()
       }
     })
-  }, [seconds, secondsDecimal, minutes, minutesDecimal]
-  )
+  }, [seconds, secondsDecimal, minutes, minutesDecimal])
+
+  console.log(status.timer)
 
   return (
     <>
-      <Header />
+      <Header/>
+
       <p>Nastav čas, jak dlouho může mít dítě zapnutou aplikaci.</p>
       <TimePlaying/>
 
@@ -40,7 +45,7 @@ export const Settings = () => {
         maxLength="1"
         value={minutesDecimal}
         onKeyPress={(event) => {
-          if (/[0-6]/.test(event.key)) setMinutesDecimal(event.key)
+          if (/[0-5]/.test(event.key)) setMinutesDecimal(event.key)
         }}
       />
 
@@ -56,7 +61,7 @@ export const Settings = () => {
         maxLength="1"
         value={secondsDecimal}
         onKeyPress={(event) => {
-          if (/[0-6]/.test(event.key)) setSecondsDecimal(event.key)
+          if (/[0-5]/.test(event.key)) setSecondsDecimal(event.key)
         }}
       />
 
