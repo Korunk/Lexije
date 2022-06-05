@@ -15,7 +15,6 @@ export const Score = () => {
         ...{ hunger: status.hunger - Math.min(status.hunger, 10) },
         ...{ fruits: status.fruits }
       })
-      console.log(status)
     }
   }
 

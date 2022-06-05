@@ -151,7 +151,7 @@ export const Letters = () => {
     const playerLostAllStars = (starCount === 0)
 
     if (playerClickedAllLetters) {
-      setStatus({ fruits: status.fruits.concat(['banana']) })
+      setStatus({ ...status, ...{ fruits: status.fruits.concat(['banana']) } })
     }
 
     if (playerClickedAllLetters || playerLostAllStars) {
