@@ -18,7 +18,7 @@ const DEFAULT_SETTINGS = {
 }
 
 // create some variables to store our images
-let star, sadElephant, fruit
+let star, sadElephant, fruit, bodyElephant
 const letterImages = {}
 const bgImages = {}
 
@@ -30,6 +30,7 @@ export const Letters = () => {
     star = p5.loadImage(images.star)
     fruit = p5.loadImage(images.fruit)
     sadElephant = p5.loadImage(images.sadElephant)
+    bodyElephant = p5.loadImage(images.bodyElephant)
 
     loadAllImages(p5)
   }
@@ -85,6 +86,9 @@ export const Letters = () => {
       case 'TRANSITION':
         drawTransitionScreen(p5)
         break
+      case 'END':
+        drawEndScreen(p5)
+        break
     }
   }
 
@@ -115,17 +119,28 @@ export const Letters = () => {
 
       if (starCount > 0) {
         p5.image(fruit, 0, 40, 400, 400)
-        setScore({ fruits: score.fruits.concat(['banana']) })
       } else {
         p5.image(sadElephant, 0, 40, 400, 400)
       }
     } else {
-      if (starCount > 0) {
-        loadLevel(levelNumber + 1)
+      // podminka jestli jsem na konci nebo pokracuju na dalsi level
+      if (levelNumber === levels.length - 1) {
+        setSettings({
+          ...settings,
+          ...{ gameState: 'END' }
+        })
       } else {
-        loadLevel(levelNumber)
+        if (starCount > 0) {
+          loadLevel(levelNumber + 1)
+        } else {
+          loadLevel(levelNumber)
+        }
       }
     }
+  }
+
+  const drawEndScreen = (p5) => {
+    p5.image(bodyElephant, 0, 40, 400, 400)
   }
 
   const isLevelFinished = () => {
@@ -134,6 +149,9 @@ export const Letters = () => {
 
     const playerClickedAllLetters = (letterIndex === letters.length)
     const playerLostAllStars = (starCount === 0)
+    if (playerClickedAllLetters) {
+      setScore({ fruits: score.fruits.concat(['banana']) })
+    }
 
     if (playerClickedAllLetters || playerLostAllStars) {
       return true
@@ -209,10 +227,14 @@ export const Letters = () => {
   }
 
   // runs when the mouse is clicked
-  const mousePressed = (p5) => {
+  const mouseClicked = (p5) => {
     const { levelNumber, letterIndex, gameState } = settings
 
-    if (gameState !== 'PLAYING') {
+    if (gameState === 'TRANSITION') {
+      return
+    }
+    if (gameState === 'END') {
+      loadLevel(0)
       return
     }
 
@@ -258,9 +280,9 @@ export const Letters = () => {
 
   return (
     <>
-    <Header withElephant={true}/>
+      <Header withElephant={true} />
       <p>Hra slova</p>
-      <Sketch setup={setup} draw={draw} preload={preload} mousePressed={mousePressed} />
+      <Sketch setup={setup} draw={draw} preload={preload} mouseClicked={mouseClicked} />
     </>
   )
 }

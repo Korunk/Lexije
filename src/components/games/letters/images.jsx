@@ -10,6 +10,7 @@ import Y from 'img/Y.png'
 import Z from 'img/Z.png'
 import star from 'img/star.png'
 import sadElephant from 'img/sad-elephant.png'
+import bodyElephant from 'img/elephant-body.png'
 import fruit from 'img/banan.png'
 
 export default {
@@ -25,5 +26,6 @@ export default {
   Z,
   star,
   sadElephant,
-  fruit
+  fruit,
+  bodyElephant
 }
