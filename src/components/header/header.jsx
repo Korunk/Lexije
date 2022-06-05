@@ -1,6 +1,6 @@
 import React from 'react'
 import './header.css'
-import home from 'img/home.jpeg'
+import home from 'img/home.png'
 import { Link } from 'react-router-dom'
 import slon from 'img/rocket.png'
 

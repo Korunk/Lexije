@@ -1,8 +1,8 @@
 .home--item {
   width: 25px;
-  background: #fae2e2;
+  background-image: #fae2e2;
 }
-.home--icon,
+.home--item,
 .slon--icon {
   width: 25px;
 }

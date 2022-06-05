@@ -10,7 +10,7 @@ import { Letters } from 'components/games/letters/letters'
 import { Directions } from 'components/games/directions/directions'
 import otaznik from 'img/otaznik.png'
 import casovac from 'img/lock.png'
-import slon from 'img/rocket.png'
+import slon from 'img/elephant-body.png'
 
 const App = () => (
   <>
@@ -23,8 +23,9 @@ const App = () => (
       </Link>
     </div>
     <div className="content">
+      <div className='content-img'>
       <h1>LeXije</h1>
-      <Link to="/score"><img className="slon--img" src={slon} alt="slon" /></Link>
+      <Link to="/score"><img className="slon--img" src={slon} alt="slon" /></Link></div>
       <div className="menu">
         <Link to="/letters" className="menu--item">
           Hra slova
