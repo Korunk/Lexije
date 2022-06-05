@@ -15,7 +15,7 @@ export const Settings = () => {
   const [minutesDecimal, setMinutesDecimal] = useState(allMinutes[0])
 
   useEffect(() => {
-    setStatus({ ...status, ...{ timer: (Number(minutesDecimal) * 6000) + (Number(minutes) * 60) + (Number(secondsDecimal) * 10) + Number(seconds) } })
+    setStatus({ ...status, ...{ timer: (Number(minutesDecimal) * 600) + (Number(minutes) * 60) + (Number(secondsDecimal) * 10) + Number(seconds) } })
   },
   [seconds, secondsDecimal, minutes, minutesDecimal]
   )
