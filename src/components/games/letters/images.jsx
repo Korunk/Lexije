@@ -9,6 +9,8 @@ import X from 'img/X.png'
 import Y from 'img/Y.png'
 import Z from 'img/Z.png'
 import star from 'img/star.png'
+import sadElephant from 'img/sad-elephant.png'
+import fruit from 'img/banan.png'
 
 export default {
   hriste,
@@ -21,5 +23,7 @@ export default {
   X,
   Y,
   Z,
-  star
+  star,
+  sadElephant,
+  fruit
 }
