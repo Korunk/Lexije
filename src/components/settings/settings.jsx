@@ -14,7 +14,7 @@ export const Settings = () => {
   const [secondsDecimal, setSecondsDecimal] = useState(allSeconds[0])
   const [minutes, setMinutes] = useState(allMinutes[1])
   const [minutesDecimal, setMinutesDecimal] = useState(allMinutes[0])
-  
+
   useEffect(() => {
     setStatus({ ...status, ...{ timer: (Number(minutesDecimal) * 600) + (Number(minutes) * 60) + (Number(secondsDecimal) * 10) + Number(seconds) } })
   },
@@ -26,11 +26,14 @@ export const Settings = () => {
       <Header />
       <p>Nastav čas, jak dlouho může mít dítě zapnutou aplikaci.</p>
       <TimePlaying/>
+
       <input onKeyPress={(event) => { if (/[0-6]/.test(event.key)) setMinutesDecimal(event.key) }} value={minutesDecimal} maxLength="1" />
+
       <input value={minutes} maxLength="1" onKeyPress={(event) => { if (/[0-9]/.test(event.key)) setMinutes(event.key) }} />
+
       <input value={secondsDecimal} maxLength="1" onKeyPress={(event) => { if (/[0-6]/.test(event.key)) setSecondsDecimal(event.key) }} />
+
       <input value={seconds} maxLength="1" onKeyPress={(event) => { if (/[0-9]/.test(event.key)) setSeconds(event.key) }} />
     </>
   )
 }
-

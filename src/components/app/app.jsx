@@ -14,7 +14,8 @@ const DEFAULT_APP_STATUS = {
   weariness: 0,
   fruits: ['banana', 'cherry', 'pear'],
   timer: 600,
-  appStarted: Date.now()
+  appStarted: Date.now(),
+  clockTick: 0
 }
 
 export const App = () => {

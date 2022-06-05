@@ -69,6 +69,10 @@ export const Directions = () => {
   }
 
   const draw = (p5) => {
+    // this clock "ticking" makes the react component reload
+    // so we can see the timer counting down
+    setStatus({ ...status, ...{ clockTick: status.clockTick + 1 } })
+
     const { gameState } = settings
     p5.background('#fae2e230')
 
