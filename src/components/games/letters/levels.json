@@ -1,31 +1,27 @@
 [
     {
-				"word": "AUTO",
+		"word": "AUTO",
         "background": "hriste",
         "letters": [
             {
-                "img": "A.png",
                 "x": 145,
                 "y": 160,
                 "radius": 20,
                 "character": "A"
             },
             {
-                "img": "U.png",
                 "x": 300,
                 "y": 370,
                 "radius": 20,
                 "character": "U"
             },
             {
-                "img": "T.png",
                 "x": 120,
                 "y": 270,
                 "radius": 20,
                 "character": "T"
             },
             {
-                "img": "O.png",
                 "x": 100,
                 "y": 100,
                 "radius": 20,
@@ -34,46 +30,40 @@
         ]
     },
     {
-				"word": "TEST",
+		"word": "TEST",
         "background": "vesmir",
         "letters": [
             {
-                "img": "T.png",
                 "x": 145,
                 "y": 160,
                 "radius": 20,
                 "character": "T"
             },
             {
-                "img": "U.png",
                 "x": 300,
                 "y": 370,
                 "radius": 20,
                 "character": "U"
             },
             {
-                "img": "V.png",
                 "x": 120,
                 "y": 270,
                 "radius": 20,
                 "character": "V"
             },
             {
-                "img": "X.png",
                 "x": 100,
                 "y": 100,
                 "radius": 20,
                 "character": "X"
             },
             {
-                "img": "Y.png",
                 "x": 80,
                 "y": 80,
                 "radius": 20,
                 "character": "Y"
             },
             {
-                "img": "Z.png",
                 "x": 300,
                 "y": 50,
                 "radius": 20,
