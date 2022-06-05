@@ -249,6 +249,9 @@ export const Letters = () => {
 
     // here you should check if mouseX and mouseY are inside the canvas
     // if it is not, return and dont continue with the function
+    if (mouseX < 0 || mouseX > 400 || mouseY < 40 || mouseY > 440) {
+      return
+    }
 
     const { letters } = levels[levelNumber]
     const targetLetter = letters[letterIndex]
