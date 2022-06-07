@@ -7,6 +7,12 @@
 body {
   background-color: #fae2e2;
   display: flex;
- text-align: center;
+  text-align: center;
   font-family: 'Patrick Hand', cursive;
+}
+@media (min-width: 420px) {
+ .appWrapper {
+    width: 700px;
+    
+  }
 }

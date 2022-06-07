@@ -36,12 +36,14 @@
 
 .ukazatel-uspechu {
 	max-width: 200px;
+	
 }
 
 .ukazatel-uspechu__ramecek {
-	
+	text-align: center;
 	border: 1px solid gray;
 	margin: 15px 0 5px;
+	border-radius: 5px;
 }
 
 .ukazatel-uspechu__postup {
@@ -49,4 +51,6 @@
 	height: 15px;
 	transition: width 0.2s ease-out;
 }
-
+.score {
+	text-align: center;
+}

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import './score.css'
 import { Header } from '../header/header'
 import slon from 'img/rocket.png'
