@@ -5,7 +5,23 @@
         
     },
     {
+        "pictureRight": "PL_4",
+        "pictureWrong": "PL_4_X"
+    },
+    {
         "pictureRight": "PL_1_C",
         "pictureWrong": "PL_1_D"
+    },
+    {
+        "pictureRight": "PL_3_1",
+        "pictureWrong": "PL_3_1_X"
+    },
+    {
+        "pictureRight": "PL_2_B",
+        "pictureWrong": "PL_2_B_X"
+    },
+    {
+        "pictureRight": "PL_2_D",
+        "pictureWrong": "PL_2_D_X"
     }
 ]
