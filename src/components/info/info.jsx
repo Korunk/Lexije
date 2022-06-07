@@ -6,7 +6,7 @@ export const Info = () => {
   return (
     <>
     <Header withElephant={false}/>
-      <h1>Základní informace o Dyslexii</h1>
+      <h1 className='title'>Základní informace o Dyslexii</h1>
  <p>Dyslexie je specifická porucha čtení. Přináší nejen dětem, ale i dospělým obtíže při čtení, které jim komplikují získávání vědomostí pomocí čtení. A protože na čtení je z velké míry postavena výuka i příprava na vyučování, omezuje schopnost učení se a ohrožuje školní úspěšnost dítěte.</p>
  <h2>Příčiny vzniku dyslexie</h2>
  <p>Za jednu z hlavních příčin dyslexie, poruchy čtení, je v současnosti podle Mezinárodní dyslektické společnosti považován fonologický deficit (obtíže s dekódováním slov, diskriminací jednotlivých hlásek, narušená schopnost hláskové syntézy, fonologické manipulace, automatizace fonetických dovedností).

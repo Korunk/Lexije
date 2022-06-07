@@ -64,7 +64,7 @@ export const Letters = () => {
 
   const setup = (p5, canvasParentRef) => {
     // this creates a canvas of a certain size
-    p5.createCanvas(400, 440).parent(canvasParentRef)
+    p5.createCanvas(400, 430).parent(canvasParentRef)
     p5.textFont('Patrick Hand')
     p5.background('#fae2e2')
   }
@@ -130,7 +130,7 @@ export const Letters = () => {
       })
 
       if (starCount > 0) {
-        p5.image(fruit, 0, 40, 400, 400)
+        p5.image(fruit, 100, 100, 200, 200)
       } else {
         p5.image(sadElephant, 0, 40, 400, 400)
       }
@@ -187,7 +187,6 @@ export const Letters = () => {
   const drawLetters = (p5) => {
     // set p5 to draw images using (x,y) as center
     p5.imageMode(p5.CENTER)
-
     const { levelNumber, debugMode } = settings
     const level = levels[levelNumber]
 
@@ -223,7 +222,7 @@ export const Letters = () => {
     // set some properties for the text we will write on the canvas
     p5.textSize(20)
     p5.noStroke()
-    p5.fill(255, 0, 0)
+    p5.fill(0, 0, 0)
 
     // display target letter
     p5.text(`${word}`, 20, 20)
@@ -233,10 +232,10 @@ export const Letters = () => {
     // set some properties for the text we will write on the canvas
     p5.textSize(30)
     p5.noStroke()
-    p5.fill(0, 0, 255)
+    p5.fill(0, 0, 0)
 
     // display clicked letters
-    p5.text(settings.lettersClicked, 150, 30)
+    p5.text(settings.lettersClicked, 150, 20)
   }
 
   // runs when the mouse is clicked
@@ -302,7 +301,7 @@ export const Letters = () => {
   return (
     <>
       <Header withElephant={true} />
-      <p>Hra slova</p>
+      <p className='letters'>Hra slova</p>
       <TimePlaying/>
       <Sketch setup={setup} draw={draw} preload={preload} mouseClicked={mouseClicked} />
     </>

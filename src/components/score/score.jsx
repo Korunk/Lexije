@@ -21,8 +21,8 @@ export const Score = () => {
   return (
     <>
       <Header />
-      <p>Hlad: {status.hunger}</p>
-      <p>Únava: {status.weariness}</p>
+      <p className="score" > Hlad: {status.hunger}</p>
+      <p className="score">Únava: {status.weariness}</p>
       <img className='slon--img' src={slon}></img>
       <div className='fruits-wrapper'>
         <div className='fruits-list'>

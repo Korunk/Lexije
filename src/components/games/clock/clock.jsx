@@ -39,7 +39,7 @@ export const Clock = () => {
 
   return (<>
     <Header withElephant={true}/>
-    <p>Hra hodiny!</p>
+    <p className='game-clock'>Hra hodiny!</p>
     <TimePlaying/>
     <Sketch setup={setup} draw={draw} preload={preload} mousePressed={mousePressed} />
   </>)

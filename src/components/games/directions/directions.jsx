@@ -223,7 +223,7 @@ export const Directions = () => {
   return (
     <>
       <Header withElephant={true}/>
-      <p>Pravá - Levá</p>
+      <p className='game-directions'>Pravá - Levá</p>
       <TimePlaying/>
       <Sketch setup={setup} draw={draw} preload={preload} mouseClicked={mouseClicked} />
     </>

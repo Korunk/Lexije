@@ -6,15 +6,15 @@ import slon from 'img/rocket.png'
 
 export const Header = (props = { withElephant: true }) => {
   return (
-    <>
-      <Link to="/">
-        <img className='home--item' src={home}></img>
-      </Link>
-      { props.withElephant &&
+    <><div className='icons'>
+    { props.withElephant &&
         <Link to= "/score">
           <img src={slon} className="slon--icon"></img>
         </Link>
       }
+      <Link to="/">
+        <img className='home--item' src={home}></img>
+      </Link></div>
     </>
   )
 }

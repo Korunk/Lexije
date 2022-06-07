@@ -1,8 +1,13 @@
 .home--item {
   width: 25px;
   background-image: #fae2e2;
+ 
+
 }
-.home--item,
 .slon--icon {
   width: 25px;
+}
+.icons {
+  display: flex;
+  justify-content: flex-end;
 }

@@ -22,22 +22,82 @@
                 "character": "T"
             },
             {
-                "x": 100,
-                "y": 100,
+                "x": 177,
+                "y": 370,
                 "radius": 20,
                 "character": "O"
             }
         ]
     },
     {
-		"word": "TEST",
+		"word": "VEDA",
         "background": "vesmir",
+        "letters": [
+            {
+                "x": 310,
+                "y": 370,
+                "radius": 20,
+                "character": "V"
+            },
+            {
+                "x": 250,
+                "y": 80,
+                "radius": 20,
+                "character": "E"
+            },
+            {
+                "x": 200,
+                "y": 220,
+                "radius": 20,
+                "character": "D"
+            },
+            {
+                "x": 55,
+                "y": 320,
+                "radius": 20,
+                "character": "A"
+            }
+        ]
+    },
+    {
+		"word": "TUHA",
+        "background": "farma",
+        "letters": [
+            {
+                "x": 360,
+                "y": 255,
+                "radius": 20,
+                "character": "T"
+            },
+            {
+                "x": 330,
+                "y": 330,
+                "radius": 20,
+                "character": "U"
+            },
+            {
+                "x": 275,
+                "y": 390,
+                "radius": 20,
+                "character": "H"
+            },
+            {
+                "x": 305,
+                "y": 205,
+                "radius": 20,
+                "character": "A"
+            }
+        ]
+    },
+    {
+		"word": "DUHA",
+        "background": "stavba",
         "letters": [
             {
                 "x": 145,
                 "y": 160,
                 "radius": 20,
-                "character": "T"
+                "character": "D"
             },
             {
                 "x": 300,
@@ -49,25 +109,49 @@
                 "x": 120,
                 "y": 270,
                 "radius": 20,
-                "character": "V"
+                "character": "H"
             },
             {
                 "x": 100,
                 "y": 100,
                 "radius": 20,
-                "character": "X"
+                "character": "A"
+            }
+        ]
+    },
+    {
+		"word": "TRIKO",
+        "background": "pokoj",
+        "letters": [
+            {
+                "x": 360,
+                "y": 265,
+                "radius": 20,
+                "character": "T"
             },
             {
-                "x": 80,
-                "y": 80,
+                "x": 155,
+                "y": 170,
                 "radius": 20,
-                "character": "Y"
+                "character": "R"
             },
             {
-                "x": 300,
-                "y": 50,
+                "x": 200,
+                "y": 295,
                 "radius": 20,
-                "character": "Z"
+                "character": "I"
+            },
+            {
+                "x": 360,
+                "y": 115,
+                "radius": 20,
+                "character": "K"
+            },
+            {
+                "x": 60,
+                "y": 355,
+                "radius": 20,
+                "character": "O"
             }
         ]
     }

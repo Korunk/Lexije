@@ -38,7 +38,7 @@ export const Settings = () => {
     <>
       <Header/>
 
-      <p>Nastav čas, jak dlouho může mít dítě zapnutou aplikaci.</p>
+      <p className='timer'>Nastav čas, jak dlouho může mít dítě zapnutou aplikaci.</p>
       <TimePlaying/>
 
       <input
@@ -56,7 +56,7 @@ export const Settings = () => {
           if (/[0-9]/.test(event.key)) setMinutes(event.key)
         }}
       />
-
+       :
       <input
         maxLength="1"
         value={secondsDecimal}
