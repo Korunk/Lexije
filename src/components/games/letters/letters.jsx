@@ -12,7 +12,7 @@ const DEFAULT_SETTINGS = {
   letterIndex: 0,
   lettersClicked: '',
   starCount: 5,
-  debugMode: true,
+  debugMode: false,
   gameState: 'PLAYING',
   transitionDuration: 120,
   transitionCountdown: 60
