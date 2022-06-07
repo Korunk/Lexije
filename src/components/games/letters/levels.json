@@ -90,30 +90,30 @@
         ]
     },
     {
-		"word": "DUHA",
-        "background": "stavba",
+		"word": "VODA",
+        "background": "prechod",
         "letters": [
             {
-                "x": 145,
-                "y": 160,
+                "x": 80,
+                "y": 170,
+                "radius": 20,
+                "character": "V"
+            },
+            {
+                "x": 360,
+                "y": 275,
+                "radius": 20,
+                "character": "O"
+            },
+            {
+                "x": 20,
+                "y": 380,
                 "radius": 20,
                 "character": "D"
             },
             {
-                "x": 300,
-                "y": 370,
-                "radius": 20,
-                "character": "U"
-            },
-            {
-                "x": 120,
-                "y": 270,
-                "radius": 20,
-                "character": "H"
-            },
-            {
-                "x": 100,
-                "y": 100,
+                "x": 150,
+                "y": 70,
                 "radius": 20,
                 "character": "A"
             }

@@ -132,7 +132,7 @@ export const Letters = () => {
       if (starCount > 0) {
         p5.image(fruit, 100, 100, 200, 200)
       } else {
-        p5.image(sadElephant, 0, 40, 400, 400)
+        p5.image(sadElephant, 0, 40, 370, 370)
       }
     } else {
       // podminka jestli jsem na konci nebo pokracuju na dalsi level
@@ -152,7 +152,7 @@ export const Letters = () => {
   }
 
   const drawEndScreen = (p5) => {
-    p5.image(bodyElephant, 0, 40, 400, 400)
+    p5.image(bodyElephant, 0, 40, 370, 370)
   }
 
   const isLevelFinished = () => {

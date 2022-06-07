@@ -2,7 +2,7 @@ import hriste from 'img/hriste.png'
 import vesmir from 'img/vesmir.png'
 import farma from 'img/farma.png'
 import pokoj from 'img/pokoj.png'
-import stavba from 'img/stavba.png'
+import prechod from 'img/prechod.png'
 import A from 'img/A.png'
 import U from 'img/U.png'
 import T from 'img/T.png'
@@ -27,7 +27,7 @@ export default {
   vesmir,
   farma,
   pokoj,
-  stavba,
+  prechod,
   A,
   O,
   U,
