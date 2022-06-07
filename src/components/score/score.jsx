@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import './score.css'
 import { Header } from '../header/header'
 import slon from 'img/rocket.png'
@@ -8,20 +8,36 @@ export const Score = () => {
   const { status, setStatus } = useContext(AppContext)
 
   const handleFruitClick = (fruitIndex) => {
-    if (status.hunger > 0) {
+    if (status.hunger < 200) {
       status.fruits.splice(fruitIndex, 1)
       setStatus({
         ...status,
-        ...{ hunger: status.hunger - Math.min(status.hunger, 10) },
+        ...{ hunger: status.hunger + Math.min(status.hunger, 10) },
         ...{ fruits: status.fruits }
       })
     }
   }
 
+  const HungerBar = () => {
+    return (
+      <div className="ukazatel-uspechu">
+        <div className="ukazatel-uspechu__ramecek">
+          <div
+            className="ukazatel-uspechu__postup"
+            style={{
+              width: `${status.hunger}%`,
+              backgroundColor: 'limegreen'
+            }}
+          ></div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <>
       <Header />
-      <p className="score" > Hlad: {status.hunger}</p>
+      <p className="score">Plné bříško: {status.hunger}</p> <HungerBar />
       <p className="score">Únava: {status.weariness}</p>
       <img className='slon--img' src={slon}></img>
       <div className='fruits-wrapper'>

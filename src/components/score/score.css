@@ -33,6 +33,20 @@
 .fruit-pear {
 	background-image: url('img/hruska.png');
 }
-.score {
-	text-align: center;
+
+.ukazatel-uspechu {
+	max-width: 200px;
 }
+
+.ukazatel-uspechu__ramecek {
+	
+	border: 1px solid gray;
+	margin: 15px 0 5px;
+}
+
+.ukazatel-uspechu__postup {
+	position: relative;
+	height: 15px;
+	transition: width 0.2s ease-out;
+}
+
