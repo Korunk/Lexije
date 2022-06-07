@@ -302,7 +302,7 @@ export const Letters = () => {
     <>
       <Header withElephant={true} />
       <p className='letters'>Hra slova</p>
-      <TimePlaying/>
+        <TimePlaying/>
       <Sketch setup={setup} draw={draw} preload={preload} mouseClicked={mouseClicked} />
     </>
   )
