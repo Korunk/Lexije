@@ -14,7 +14,7 @@ import PL_4 from 'img/PL_4.png'
 import PL_4_X from 'img/PL_4_X.png'
 import sadElephant from 'img/sad-elephant.png'
 import bodyElephant from 'img/elephant-body.png'
-import fruit from 'img/banan.png'
+import fruit from 'img/hruska.png'
 
 export default {
   PL_1_A,
