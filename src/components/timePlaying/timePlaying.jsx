@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { AppContext } from 'components/app/app'
 import './timePlaying.css'
+import { LastPage } from 'components/lastPage/lastPage'
 
 export const secondsLeft = (appStarted, timer) => {
   const timePlaying = ((Date.now() - appStarted) / 1000)
@@ -17,6 +18,10 @@ export const TimePlaying = () => {
   if (numberOfSecondsLeft > 0) {
     return (<p className='time'>Zbývá ti {Math.ceil(numberOfSecondsLeft)} vteřin.</p>)
   } else {
-    return (<p className='time'>Čas vypršel!</p>)
+    return (
+    <>
+    <LastPage />
+    <p className='time'>Čas vypršel!</p>
+    </>)
   }
 }

@@ -19,7 +19,8 @@ export const Score = () => {
   }
 
   const HungerBar = () => {
-    return (
+    if (status.hunger <= 200) {
+      return (
       <div className="ukazatel-uspechu">
         <div className="ukazatel-uspechu__ramecek">
           <div
@@ -31,14 +32,15 @@ export const Score = () => {
           ></div>
         </div>
       </div>
-    )
+      )
+    }
   }
 
   return (
     <>
       <Header />
-      <div className='bar'><p className="score">Plné bříško: {status.hunger}</p> <HungerBar />
-      <p className="score">Únava: {status.weariness}</p></div>
+      <div className='bar'><p className="score">Plné bříško: {status.hunger}</p> <HungerBar /></div>
+      <p className="score">Únava: {status.weariness}</p>
       <img className='slon--img' src={slon}></img>
       <div className='fruits-wrapper'>
         <div className='fruits-list'>
