@@ -1,4 +1,3 @@
-import { Header } from 'components/header/header'
 import React, { useState } from 'react'
 import Sketch from 'react-p5'
 import './clock.css'
@@ -38,7 +37,6 @@ export const Clock = () => {
   const mousePressed = (p5) => {}
 
   return (<>
-    <Header withElephant={true}/>
     <p className='game-clock'>Hra hodiny!</p>
     <TimePlaying/>
     <Sketch setup={setup} draw={draw} preload={preload} mousePressed={mousePressed} />
