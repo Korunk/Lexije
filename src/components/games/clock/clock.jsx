@@ -1,53 +1,65 @@
 import React, { useState } from 'react'
-import Sketch from 'react-p5'
 import './clock.css'
-import clockImg from '../../../img/clock.png'
 
 const realTime = new Date()
 
 const minutes = realTime.getMinutes()
 const hours = realTime.getHours()
 export const Clock = () => {
-  let hodinyImg
-  const [timeTask, setTimeTask] = useState(`${hours} : ${minutes}`)
-  let buttonReload
-  const setup = (p5, canvasParentRef) => {
-    p5.createCanvas(400, 460).parent(canvasParentRef)
-  }
-  const draw = (p5) => {
-    p5.background(190, 100, 0)
-    p5.imageMode(p5.CENTER)
-    p5.image(hodinyImg, 200, 260, 350, 350)
-    p5.stroke(255, 0, 0)
-    p5.strokeWeight(4)
-    p5.line(200, 257, 300, 200)
-    p5.stroke(255, 0, 0)
-    p5.strokeWeight2(4)
-    p5.line2(200, 257, 200, 300)
+  const minute = 25
+  const minuteDeg = ((minute / 60) * 360)
 
+  const hour = 10
+  const hourDeg = ((hour / 12) * 360)
+  // tady state hodin a minuty a hodiny + default hodnota 0-11 pro hodiny a 0-59 pro minuty
 
-    // time task in the header
-    p5.textSize(20)
-    p5.noStroke()
-    p5.fill(0)
-    p5.text(`${timeTask}`, 180, 40)
+  /*
+  tento javascript napojit na react a state a hodnota hodin a minut se bude brat ze state
 
-    // button to reloadTimeTask
-    buttonReload = p5.createButton('reload Time')
-    buttonReload.position(280, 40)
-    buttonReload.mousePressed(newTime)
-  }
-  const newTime = () => {
-    setTimeTask('18:50')
-    console.log(timeTask)
-  }
-  const preload = (p5) => {
-    hodinyImg = p5.loadImage(clockImg)
-  }
-  const mousePressed = (p5) => {}
+    const hourHand = document.querySelector('.hourHand');
+    const minuteHand = document.querySelector('.minuteHand');
+    const clock = document.querySelector('.clock');
 
-  return (<>
-    <p className='game-clock'>Hra hodiny!</p>
-    <Sketch setup={setup} draw={draw} preload={preload} mousePressed={mousePressed} />
-  </>)
+    function setDate(){
+        const today = new Date();
+
+        const minute =
+
+        const minute = today.getMinutes();
+        const minuteDeg = ((minute / 60) * 360);
+        minuteHand.style.transform = `rotate(${minuteDeg}deg)`;
+
+        const hour = today.getHours();
+        const hourDeg = ((hour / 12 ) * 360 );
+        hourHand.style.transform = `rotate(${hourDeg}deg)`;
+
+        time.innerHTML = '<span>' + '<strong>' + hour + '</strong>' + ' : ' + minute + ' : ' + '<small>' + second +'</small>'+ '</span>';
+
+        }
+  */
+
+  return (
+    <>
+      <p className='game-clock'>Hra hodiny!</p>
+      <div className="clock">
+        <div className="hourHand" onClick={() => console.log('clicknuto na hodiny')} style={{ transform: 'rotate(' + hourDeg + 'deg)' }}></div>
+        <div className="minuteHand" onClick={() => console.log('clicknuto na minuty')} style={{ transform: 'rotate(' + minuteDeg + 'deg)' }}></div>
+        <div className="center"></div>
+        <ul>
+          <li><span>1</span></li>
+          <li><span>2</span></li>
+          <li><span>3</span></li>
+          <li><span>4</span></li>
+          <li><span>5</span></li>
+          <li><span>6</span></li>
+          <li><span>7</span></li>
+          <li><span>8</span></li>
+          <li><span>9</span></li>
+          <li><span>10</span></li>
+          <li><span>11</span></li>
+          <li><span>12</span></li>
+        </ul>
+      </div>
+    </>
+  )
 }

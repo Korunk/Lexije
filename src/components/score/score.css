@@ -24,6 +24,7 @@
 	background-size: contain;
 	background-position: center;
 	margin: 3px;
+	cursor: grab;
 }
 .fruit-banana {
 	background-image: url('img/banan.png');
@@ -33,10 +34,6 @@
 }
 .fruit-pear {
 	background-image: url('img/hruska.png');
-}
-
-.ukazatel-uspechu {
-	max-width: 200px;
 }
 
 .ukazatel-uspechu__ramecek {
@@ -52,4 +49,11 @@
 }
 .score {
 	text-align: center;
+}
+.barWrapper {
+	display: flex;
+	justify-content: center;
+}
+.bar {
+	min-width: 200px;
 }
