@@ -32,8 +32,6 @@ export const Settings = () => {
     })
   }, [seconds, secondsDecimal, minutes, minutesDecimal])
 
-  console.log(status.timer)
-
   return (
     <>
       <TimePlaying/>

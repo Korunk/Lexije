@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { AppContext } from 'components/app/app'
 import './timePlaying.css'
 import { LastPage } from 'components/lastPage/lastPage'
@@ -7,20 +7,26 @@ import { Header } from 'components/header/header'
 export const secondsLeft = (appStarted, timer) => {
   const timePlaying = ((Date.now() - appStarted) / 1000)
 
-  return timer - timePlaying
+  return Math.floor(timer - timePlaying)
 }
 
 export const TimePlaying = (props) => {
-  const { status, setStatus } = useContext(AppContext)
+  const { status } = useContext(AppContext)
   const { appStarted, timer } = status
+  const [secondsLeftState, setSecondsLeftState] = useState(secondsLeft(appStarted, timer))
 
-  const numberOfSecondsLeft = secondsLeft(appStarted, timer)
+  useEffect(() => {
+    const timerEffect = setTimeout(() => {
+      setSecondsLeftState(secondsLeft(appStarted, timer))
+      return () => clearTimeout(timerEffect)
+    }, 1000)
+  }, [secondsLeftState])
 
-  if (numberOfSecondsLeft > 0) {
+  if (secondsLeftState > 0) {
     return (
       <>
       <Header withElephant={true}/>
-      <p className='time'>Zbývá ti {Math.floor(numberOfSecondsLeft / 60)} a {Math.round(numberOfSecondsLeft % 60)} vteřin.
+      <p className='time'>Zbývá ti {secondsLeftState} vteřin.
       </p>
       {props.children }
       </>)
