@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { Header } from '../header/header'
 import './settings.css'
 import { AppContext } from 'components/app/app'
 import { TimePlaying } from 'components/timePlaying/timePlaying'
