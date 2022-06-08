@@ -15,7 +15,8 @@ const DEFAULT_SETTINGS = {
   debugMode: false,
   gameState: 'PLAYING',
   transitionDuration: 120,
-  transitionCountdown: 60
+  transitionCountdown: 60,
+  targetScale: 1.5
 }
 
 // create some variables to store our images
@@ -187,7 +188,7 @@ export const Letters = () => {
   const drawLetters = (p5) => {
     // set p5 to draw images using (x,y) as center
     p5.imageMode(p5.CENTER)
-    const { levelNumber, debugMode } = settings
+    const { levelNumber, debugMode, targetScale } = settings
     const level = levels[levelNumber]
 
     for (let i = 0; i < level.letters.length; i++) {
@@ -203,13 +204,15 @@ export const Letters = () => {
       )
 
       if (debugMode === true) {
+        const circleWidth = (letter.radius * 2) * targetScale
+
         p5.stroke(0, 255, 0)
         p5.fill(255, 0, 255, 128)
         p5.ellipse(
           letter.x,
           letter.y,
-          letter.radius * 2,
-          letter.radius * 2
+          circleWidth,
+          circleWidth
         )
       }
     }
@@ -240,7 +243,7 @@ export const Letters = () => {
 
   // runs when the mouse is clicked
   const mouseClicked = (p5) => {
-    const { levelNumber, letterIndex, gameState } = settings
+    const { levelNumber, letterIndex, gameState, targetScale } = settings
 
     if (gameState === 'TRANSITION') {
       return
@@ -261,12 +264,14 @@ export const Letters = () => {
     const { letters } = levels[levelNumber]
     const targetLetter = letters[letterIndex]
 
+    const targetRadius = targetLetter.radius * targetScale
+
     const distanceToMouse = p5.floor(
       p5.dist(mouseX, mouseY, targetLetter.x, targetLetter.y)
     )
 
     // if distance bigger than radius, player missed
-    if (distanceToMouse > targetLetter.radius) {
+    if (distanceToMouse > targetRadius) {
       console.log('miss')
       decreaseStars()
     } else {

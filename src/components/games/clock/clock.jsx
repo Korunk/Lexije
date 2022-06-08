@@ -5,9 +5,13 @@ import './clock.css'
 import clockImg from '../../../img/clock.png'
 import { TimePlaying } from 'components/timePlaying/timePlaying'
 
+const realTime = new Date()
+
+const minutes = realTime.getMinutes()
+const hours = realTime.getHours()
 export const Clock = () => {
   let hodinyImg
-  const [timeTask, setTimeTask] = useState('12:35')
+  const [timeTask, setTimeTask] = useState(`${hours} : ${minutes}`)
   let buttonReload
   const setup = (p5, canvasParentRef) => {
     p5.createCanvas(400, 460).parent(canvasParentRef)
@@ -16,6 +20,13 @@ export const Clock = () => {
     p5.background(190, 100, 0)
     p5.imageMode(p5.CENTER)
     p5.image(hodinyImg, 200, 260, 350, 350)
+    p5.stroke(255, 0, 0)
+    p5.strokeWeight(4)
+    p5.line(200, 257, 300, 200)
+    p5.stroke(255, 0, 0)
+    p5.strokeWeight2(4)
+    p5.line2(200, 257, 200, 300)
+
 
     // time task in the header
     p5.textSize(20)
@@ -39,6 +50,7 @@ export const Clock = () => {
 
   return (<>
     <Header withElephant={true}/>
+    <div className="clock"></div>
     <p className='game-clock'>Hra hodiny!</p>
     <TimePlaying/>
     <Sketch setup={setup} draw={draw} preload={preload} mousePressed={mousePressed} />

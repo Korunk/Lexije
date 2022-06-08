@@ -5,26 +5,26 @@
         "letters": [
             {
                 "x": 145,
-                "y": 160,
-                "radius": 20,
+                "y": 155,
+                "radius": 15,
                 "character": "A"
             },
             {
                 "x": 300,
-                "y": 370,
-                "radius": 20,
+                "y": 375,
+                "radius": 14,
                 "character": "U"
             },
             {
                 "x": 120,
-                "y": 270,
-                "radius": 20,
+                "y": 265,
+                "radius": 15,
                 "character": "T"
             },
             {
                 "x": 177,
                 "y": 370,
-                "radius": 20,
+                "radius": 16,
                 "character": "O"
             }
         ]
@@ -36,25 +36,25 @@
             {
                 "x": 310,
                 "y": 370,
-                "radius": 20,
+                "radius": 15,
                 "character": "V"
             },
             {
                 "x": 250,
                 "y": 80,
-                "radius": 20,
+                "radius": 15,
                 "character": "E"
             },
             {
                 "x": 200,
                 "y": 220,
-                "radius": 20,
+                "radius": 15,
                 "character": "D"
             },
             {
                 "x": 55,
                 "y": 320,
-                "radius": 20,
+                "radius": 15,
                 "character": "A"
             }
         ]
@@ -66,25 +66,25 @@
             {
                 "x": 360,
                 "y": 255,
-                "radius": 20,
+                "radius": 15,
                 "character": "T"
             },
             {
                 "x": 330,
                 "y": 330,
-                "radius": 20,
+                "radius": 15,
                 "character": "U"
             },
             {
                 "x": 275,
                 "y": 390,
-                "radius": 20,
+                "radius": 15,
                 "character": "H"
             },
             {
                 "x": 305,
                 "y": 205,
-                "radius": 20,
+                "radius": 15,
                 "character": "A"
             }
         ]
@@ -96,25 +96,25 @@
             {
                 "x": 80,
                 "y": 170,
-                "radius": 20,
+                "radius": 15,
                 "character": "V"
             },
             {
                 "x": 360,
                 "y": 275,
-                "radius": 20,
+                "radius": 16,
                 "character": "O"
             },
             {
-                "x": 20,
-                "y": 380,
-                "radius": 20,
+                "x": 15,
+                "y": 375,
+                "radius": 16,
                 "character": "D"
             },
             {
                 "x": 150,
                 "y": 70,
-                "radius": 20,
+                "radius": 15,
                 "character": "A"
             }
         ]
@@ -125,32 +125,32 @@
         "letters": [
             {
                 "x": 360,
-                "y": 265,
-                "radius": 20,
+                "y": 260,
+                "radius": 15,
                 "character": "T"
             },
             {
                 "x": 155,
                 "y": 170,
-                "radius": 20,
+                "radius": 15,
                 "character": "R"
             },
             {
                 "x": 200,
-                "y": 295,
-                "radius": 20,
+                "y": 290,
+                "radius": 15,
                 "character": "I"
             },
             {
                 "x": 360,
-                "y": 115,
-                "radius": 20,
+                "y": 120,
+                "radius": 15,
                 "character": "K"
             },
             {
                 "x": 60,
                 "y": 355,
-                "radius": 20,
+                "radius": 17,
                 "character": "O"
             }
         ]
