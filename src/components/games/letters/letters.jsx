@@ -96,7 +96,7 @@ export const Letters = () => {
   const drawPlayScreen = (p5) => {
     const { levelNumber, transitionDuration } = settings
 
-    p5.image(bgImages[levelNumber], 0, 40)
+    p5.image(bgImages[levelNumber], 20, 40)
 
     drawLetters(p5)
 
@@ -164,7 +164,7 @@ export const Letters = () => {
 
   const drawStars = (p5) => {
     const { starCount } = settings
-    let starX = 380
+    let starX = 378
     const starY = 5
 
     for (let i = 0; i < starCount; i++) {

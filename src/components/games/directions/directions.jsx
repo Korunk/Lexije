@@ -142,7 +142,7 @@ export const Directions = () => {
       })
 
       if (result === 'Bingo') {
-        p5.image(fruit, 0, 40, 400, 400)
+        p5.image(fruit, 70, 40, 250, 400)
       } else {
         p5.image(sadElephant, 0, 40, 400, 400)
       }
