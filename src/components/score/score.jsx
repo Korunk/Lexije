@@ -3,6 +3,7 @@ import './score.css'
 import { Header } from '../header/header'
 import slon from 'img/rocket.png'
 import { AppContext } from 'components/app/app'
+import { TimePlaying } from 'components/timePlaying/timePlaying'
 
 export const Score = () => {
   const { status, setStatus } = useContext(AppContext)
@@ -40,7 +41,8 @@ export const Score = () => {
     <>
       <Header />
       <div className='bar'><p className="score">Plné bříško: {status.hunger}</p> <HungerBar /></div>
-      <p className="score">Únava: {status.weariness}</p>
+      {/* <p className="score">Únava: {status.weariness}</p> */}
+      <TimePlaying />
       <img className='slon--img' src={slon}></img>
       <div className='fruits-wrapper'>
         <div className='fruits-list'>
