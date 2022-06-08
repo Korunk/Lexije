@@ -9,7 +9,7 @@ export const timeBar = () => {
                     className="ukazatel-uspechu__postup"
                     style={{
                         width: `${status.hunger}%`,
-                        backgroundColor: 'limegreen'}) >
+                        backgroundColor: 'limegreen'} ) >
                 </div>
             </div>
         </div>

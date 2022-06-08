@@ -6,5 +6,6 @@ input {
   margin:3px;
   text-align: end;
   border: 2px solid black;
+  cursor: pointer;
 
 }
