@@ -16,7 +16,7 @@ export const TimePlaying = () => {
   const numberOfSecondsLeft = secondsLeft(appStarted, timer)
 
   if (numberOfSecondsLeft > 0) {
-    return (<p className='time'>Zbývá ti {Math.ceil(numberOfSecondsLeft)} vteřin.</p>)
+    return (<p className='time'>Zbývá ti {Math.floor(numberOfSecondsLeft / 60)} a {Math.round(numberOfSecondsLeft % 60)} vteřin.</p>)
   } else {
     return (
     <>
