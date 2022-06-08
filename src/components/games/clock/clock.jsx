@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Sketch from 'react-p5'
 import './clock.css'
 import clockImg from '../../../img/clock.png'
-import { TimePlaying } from 'components/timePlaying/timePlaying'
 
 export const Clock = () => {
   let hodinyImg
@@ -38,7 +37,6 @@ export const Clock = () => {
 
   return (<>
     <p className='game-clock'>Hra hodiny!</p>
-    <TimePlaying/>
     <Sketch setup={setup} draw={draw} preload={preload} mousePressed={mousePressed} />
   </>)
 }

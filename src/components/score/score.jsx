@@ -39,10 +39,9 @@ export const Score = () => {
 
   return (
     <>
-      <Header />
+      <TimePlaying />
       <div className='bar'><p className="score">Plné bříško: {status.hunger}</p> <HungerBar /></div>
       {/* <p className="score">Únava: {status.weariness}</p> */}
-      <TimePlaying />
       <img className='slon--img' src={slon}></img>
       <div className='fruits-wrapper'>
         <div className='fruits-list'>
