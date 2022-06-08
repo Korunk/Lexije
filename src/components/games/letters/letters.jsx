@@ -3,9 +3,7 @@ import Sketch from 'react-p5'
 import levels from './levels.json'
 import images from './images'
 import './letters.css'
-import { Header } from 'components/header/header'
 import { AppContext } from 'components/app/app'
-import { TimePlaying, secondsLeft } from 'components/timePlaying/timePlaying'
 
 const DEFAULT_SETTINGS = {
   levelNumber: 0,
@@ -71,16 +69,6 @@ export const Letters = () => {
   }
 
   const draw = (p5) => {
-    // this clock "ticking" makes the react component reload
-    // so we can see the timer counting down
-    setStatus({ ...status, ...{ clockTick: status.clockTick + 1 } })
-
-    const { appStarted, timer } = status
-
-    if (secondsLeft(appStarted, timer) <= 0) {
-      console.log('time up')
-    }
-
     const { gameState } = settings
 
     p5.background('#fae2e230')
@@ -305,9 +293,7 @@ export const Letters = () => {
 
   return (
     <>
-      <Header withElephant={true} />
       <p className='letters'>Hra slova</p>
-        <TimePlaying/>
       <Sketch setup={setup} draw={draw} preload={preload} mouseClicked={mouseClicked} />
     </>
   )

@@ -1,11 +1,9 @@
 import React, { useState, useContext } from 'react'
 import Sketch from 'react-p5'
-import { Header } from 'components/header/header'
 import './directions.css'
 import levels from './levels.json'
 import images from './images'
 import { AppContext } from 'components/app/app'
-import { TimePlaying } from 'components/timePlaying/timePlaying'
 
 const DEFAULT_SETTINGS = {
   levelNumber: 0,
@@ -69,10 +67,6 @@ export const Directions = () => {
   }
 
   const draw = (p5) => {
-    // this clock "ticking" makes the react component reload
-    // so we can see the timer counting down
-    setStatus({ ...status, ...{ clockTick: status.clockTick + 1 } })
-
     const { gameState } = settings
     p5.background('#fae2e230')
 
@@ -208,8 +202,15 @@ export const Directions = () => {
 
     answered = true
 
+    const { fruitCount } = status
+
     if (odpoved === target) {
-      setStatus({ ...status, ...{ fruits: status.fruits.concat(['banana']) } })
+      setStatus({
+        ...status,
+        ...{ fruits: status.fruits.concat(['banana']) },
+        ...{ fruitCount: (fruitCount + 1) }
+      })
+
       result = 'Bingo'
       // vyhra, pokracuj dal. Dostanes ovoce a nacte se novy level
     } else {
@@ -222,9 +223,7 @@ export const Directions = () => {
 
   return (
     <>
-      <Header withElephant={true}/>
       <p className='game-directions'>Pravá - Levá</p>
-      <TimePlaying/>
       <Sketch setup={setup} draw={draw} preload={preload} mouseClicked={mouseClicked} />
     </>
   )

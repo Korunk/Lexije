@@ -1,9 +1,7 @@
-import { Header } from 'components/header/header'
 import React, { useState } from 'react'
 import Sketch from 'react-p5'
 import './clock.css'
 import clockImg from '../../../img/clock.png'
-import { TimePlaying } from 'components/timePlaying/timePlaying'
 
 const realTime = new Date()
 
@@ -49,10 +47,7 @@ export const Clock = () => {
   const mousePressed = (p5) => {}
 
   return (<>
-    <Header withElephant={true}/>
-    <div className="clock"></div>
     <p className='game-clock'>Hra hodiny!</p>
-    <TimePlaying/>
     <Sketch setup={setup} draw={draw} preload={preload} mousePressed={mousePressed} />
   </>)
 }

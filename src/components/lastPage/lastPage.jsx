@@ -9,7 +9,8 @@ export const LastPage = () => {
   return (
     <>
         <div>Hrál jsi: {minuty} : {vteriny}</div> {/* // sem chci dostat celkový čas, který byl nastaveny */}
-        <div>Získal jsi XXX ovoce.</div>
+        {/* <div>Získal jsi {status.fruitCount} ovoce.</div> */}
+        <div>Získal jsi ovoce: {status.fruitCount}</div>
     </>
   )
 }

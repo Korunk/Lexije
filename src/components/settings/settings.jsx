@@ -32,14 +32,10 @@ export const Settings = () => {
     })
   }, [seconds, secondsDecimal, minutes, minutesDecimal])
 
-  console.log(status.timer)
-
   return (
     <>
-      <Header/>
-
-      <p className='timer'>Nastav čas, jak dlouho může mít dítě zapnutou aplikaci.</p>
       <TimePlaying/>
+      <p className='timer'>Nastav čas, jak dlouho může mít dítě zapnutou aplikaci.</p>
 
       <input
         maxLength="1"

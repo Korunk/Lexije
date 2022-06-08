@@ -8,11 +8,13 @@ import { Clock } from 'components/games/clock/clock'
 import { Letters } from 'components/games/letters/letters'
 import { Directions } from 'components/games/directions/directions'
 import { Menu } from 'components/menu/menu'
+import { TimePlaying } from 'components/timePlaying/timePlaying'
 
 const DEFAULT_APP_STATUS = {
   hunger: 50,
   weariness: 0,
   fruits: ['banana', 'cherry', 'pear'],
+  fruitCount: 0,
   timer: 600,
   appStarted: Date.now(),
   clockTick: 0
@@ -31,9 +33,9 @@ export const App = () => {
             <Route path="/score" element={<Score />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/info" element={<Info />} />
-            <Route path="/letters" element={<Letters />} />
-            <Route path="/clock" element={<Clock />} />
-            <Route path="/directions" element={<Directions />} />
+            <Route path="/letters" element={<TimePlaying> <Letters /></TimePlaying>} />
+            <Route path="/clock" element={<TimePlaying ><Clock /> </TimePlaying>} />
+            <Route path="/directions" element={<TimePlaying ><Directions /></TimePlaying>} />
             <Route path="*" element={<main style={{ padding: '1rem' }}><p>Stránka nenalezena</p></main>} />
           </Routes>
         </BrowserRouter>
