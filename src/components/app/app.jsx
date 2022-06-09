@@ -11,7 +11,7 @@ import { Menu } from 'components/menu/menu'
 import { TimePlaying } from 'components/timePlaying/timePlaying'
 
 const DEFAULT_APP_STATUS = {
-  hunger: 50,
+  hunger: 10,
   weariness: 0,
   fruits: ['banana', 'cherry', 'pear'],
   fruitCount: 0,

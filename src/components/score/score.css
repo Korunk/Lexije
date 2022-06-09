@@ -38,14 +38,13 @@
 
 .ukazatel-uspechu__ramecek {
 	border: 1px solid gray;
-	margin: 15px 0 5px;
+	margin: 5px 0 15px;
 	border-radius: 5px;
-
 }
 
 .ukazatel-uspechu__postup {
 	height: 15px;
-	transition: width 0.2s ease-out;
+	transition: width 10px linear;
 }
 .score {
 	text-align: center;
@@ -53,7 +52,12 @@
 .barWrapper {
 	display: flex;
 	justify-content: center;
+	
 }
 .bar {
 	min-width: 200px;
+}
+
+.fruitIcon--img {
+	width: 25px;
 }
