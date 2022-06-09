@@ -1,3 +1,24 @@
 .time {
   text-align: center;
 }
+
+.ukazatel-casu{
+  margin: auto;
+  max-width: 200px;
+  justify-content: row;
+}
+
+.ukazatel-casu__ramecek {
+	border: 1px solid gray;
+	margin: 5px 0 15px;
+	border-radius: 5px;
+}
+
+.ukazatel-casu__postup {
+	height: 15px;
+	transition: width 10px linear;
+}
+
+.timeIcon--img {
+	width: 30px;
+}
