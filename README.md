@@ -1,6 +1,6 @@
 # Lexije
 
-Lexije je závěrečný projekt Digitální Akademie Web Jaro 2022 od Czechitas.
+Lexije je závěrečný projekt Digitální Akademie Web Jaro 2022 od Czechitas. Web obsahuje časovač, informace o dyslexii, tři hry, přehled skóre a celkový přehled, jak dítě hrálo.
 
 V projektu je 8 stránek:
 
@@ -16,4 +16,7 @@ V projektu je 8 stránek:
 Technický popis:
 
 - Projekt je psaný v Reactu a v p5js.org a obsahuje několik komponent.
-- Použily jsem react-router.
+- p5js.org -> napsané hry Slova a Strany
+- Použily jsem react-router
+- Projekt je publikován přes Netlify
+- Projekt si pustíte naklonováním projektu (git clone https://github.com/Korunk/Lexije.git) a následně je pořeba pustit npm install a npm run start
