@@ -96,7 +96,7 @@ export const Letters = () => {
   const drawPlayScreen = (p5) => {
     const { levelNumber, transitionDuration } = settings
 
-    p5.image(bgImages[levelNumber], 20, 40)
+    p5.image(bgImages[levelNumber], 0, 40)
 
     drawLetters(p5)
 
