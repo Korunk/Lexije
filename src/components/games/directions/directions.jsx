@@ -207,7 +207,7 @@ export const Directions = () => {
     if (odpoved === target) {
       setStatus({
         ...status,
-        ...{ fruits: status.fruits.concat(['banana']) },
+        ...{ fruits: status.fruits.concat(['pear']) },
         ...{ fruitCount: (fruitCount + 1) }
       })
 
