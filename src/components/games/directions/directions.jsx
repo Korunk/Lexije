@@ -223,8 +223,7 @@ export const Directions = () => {
 
   return (
     <>
-      <h2 className='game-directions'>Pravá - Levá</h2>
-      <p className='game-directions'>Vyber stejný obrázek.</p>
+      <h2 className='game-directions'>Vyber stejný obrázek.</h2>
       <Sketch setup={setup} draw={draw} preload={preload} mouseClicked={mouseClicked} />
     </>
   )

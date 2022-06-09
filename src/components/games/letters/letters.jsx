@@ -293,7 +293,7 @@ export const Letters = () => {
 
   return (
     <>
-      <h2 className='letters'>Hra slova</h2>
+      <h2 className='letters'>Najdi písmenka a poskládej slovo:</h2>
       <Sketch setup={setup} draw={draw} preload={preload} mouseClicked={mouseClicked} />
     </>
   )

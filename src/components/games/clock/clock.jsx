@@ -13,7 +13,7 @@ export const Clock = () => {
 
   return (
     <>
-      <p className='game-clock'>Nastav čas podle předlohy:</p>
+      <h2 className='game-clock'>Nastav čas podle předlohy:</h2>
       <div className='real-time'>{hours}:{minutes}</div>
       <div className="clock">
         <div className="hourHand" onClick={() => setHour(hour + 1)} style={{ transform: 'rotate(' + hourDeg + 'deg)' }}></div>
