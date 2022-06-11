@@ -14,6 +14,7 @@ export const Settings = () => {
 
   const [minutes, setMinutes] = useState(allMinutes[1])
   const [minutesDecimal, setMinutesDecimal] = useState(allMinutes[0])
+  const [disabled, setDisabled] = useState(false)
 
   useEffect(() => {
     setStatus({
@@ -30,7 +31,6 @@ export const Settings = () => {
       }
     })
   }, [seconds, secondsDecimal, minutes, minutesDecimal])
-
   return (
     <>
       <TimePlaying/>
@@ -41,7 +41,8 @@ export const Settings = () => {
         value={minutesDecimal}
         onKeyPress={(event) => {
           if (/[0-5]/.test(event.key)) setMinutesDecimal(event.key)
-        }}
+        }
+      }disabled={disabled}
       />
 
       <input
@@ -50,6 +51,7 @@ export const Settings = () => {
         onKeyPress={(event) => {
           if (/[0-9]/.test(event.key)) setMinutes(event.key)
         }}
+        disabled={disabled}
       />
        :
       <input
@@ -57,16 +59,15 @@ export const Settings = () => {
         value={secondsDecimal}
         onKeyPress={(event) => {
           if (/[0-5]/.test(event.key)) setSecondsDecimal(event.key)
-        }}
+        }}disabled={disabled}
       />
 
       <input
         maxLength="1"
         value={seconds}
         onKeyPress={(event) => {
-          if (/[0-9]/.test(event.key)) setSeconds(event.key)
-        }}
-      />
+          if (/[0-9]/.test(event.key)) setSeconds(event.key) }}disabled={disabled}
+          />
+<button disabled={disabled} onClick={() => {setDisabled(true) && Settings()}}>Spustit čas</button>
     </>
-  )
-}
+  )}
