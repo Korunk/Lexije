@@ -19,4 +19,5 @@ Technický popis:
 - p5js.org -> napsané hry Slova a Strany
 - Použily jsem react-router
 - Projekt je publikován přes Netlify
+- CreateContext
 - Projekt si pustíte naklonováním projektu (git clone https://github.com/Korunk/Lexije.git) a následně je pořeba pustit npm install a npm run start
